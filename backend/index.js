@@ -32,7 +32,7 @@ let OtpStore = {};
 // get Function for fetch all events
 app.get('/event', async (req, res) => {
   try {
-    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+    const browser = await puppeteer.launch({ headless: true });
 
     const page = await browser.newPage();
 
