@@ -10,8 +10,7 @@ const app = express();
 // Middleware for CORS
 app.use(cors({
   origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
 }))
 
 // Middleware for parsing JSON

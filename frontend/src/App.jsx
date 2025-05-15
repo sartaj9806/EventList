@@ -18,6 +18,9 @@ const App = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
+
+      console.log(backendUrl)
+
       try {
         const { data } = await axios.get(`${backendUrl}/event`)
 
