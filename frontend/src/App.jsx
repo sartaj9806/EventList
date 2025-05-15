@@ -4,6 +4,9 @@ import axios from 'axios'
 
 const App = () => {
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+
   const [events, setEvents] = useState([])
   const [isEmail, setIsEmail] = useState(false)
   const [email, setEmail] = useState('')
@@ -16,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const { data } = await axios.get('http://localhost:3000/event')
+        const { data } = await axios.get(`${backendUrl}/event`)
 
         if (data.success) {
           setEvents(data.data)
@@ -39,7 +42,7 @@ const App = () => {
 
     if (isOtp) {
       try {
-        const { data } = await axios.post('http://localhost:3000/verify-otp', { email, otp })
+        const { data } = await axios.post(`${backendUrl}/verify-otp`, { email, otp })
 
         if (data.success) {
           setIsEmail(false)
@@ -55,7 +58,7 @@ const App = () => {
       }
     } else {
       try {
-        const { data } = await axios.post('http://localhost:3000/get-otp', { email })
+        const { data } = await axios.post(`${backendUrl}/get-otp`, { email })
 
         if (data.success) {
           setIsOtp(true)
