@@ -115,6 +115,6 @@ app.post('/verify-otp', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-  console.log('Server is running on Port 3000');
+app.listen(3200, () => {
+  console.log('Server is running on Port 3200');
 });
