@@ -4,4 +4,4 @@
 npm install
 
 # Install Chromium manually for Puppeteer
-npx puppeteer browsers install chrome
+npm puppeteer browsers install chrome
